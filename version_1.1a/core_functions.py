@@ -21,8 +21,8 @@ def ExcelParse(excelPath, excelSheet, outputPath, hyperionColumns, workOrderColu
 
     #Exports original data and reformatted data to the original sheet
     with pd.ExcelWriter(outputPath, date_format = 'mm/dd/yy', datetime_format='mm/dd/yy') as writer:
-        dfWorkOrderNaN.to_excel(writer, index=False sheet_name=('IRR Basic Information'))
-        dfNaN.to_excel(writer, index=False sheet_name=('IRR Reformatted'))
+        dfWorkOrderNaN.to_excel(writer, index=False, sheet_name=('IRR Basic Information'))
+        dfNaN.to_excel(writer, index=False, sheet_name=('IRR Reformatted'))
         df.to_excel(writer, index=False, sheet_name=('Original Data'))
         
     del writer
